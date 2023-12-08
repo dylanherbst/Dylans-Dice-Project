@@ -1,0 +1,21 @@
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    color: cadetblue;
+    font-size: xx-large;
+
+}
+
+#dice-results {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#dice-type {
+    font-size: x-large;
+    color: black;
+}
