@@ -1,22 +1,23 @@
+let methods = {
+    "6": rollDie6,
+    "10": rollDie10
+};
 
-function rollDie(sides) {
-    return Math.floor(Math.random() * sides) + 1;
+function rollDie6() {
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+function rollDie10() {
+    return Math.floor(Math.random() * 10) + 1;
 }
 
 function rollDice() {
-    const selectedDice = document.getElementById('dice-type-selection');
-    const sides1 = 6; 
-    const sides2 = 10; 
+    let selectedDice = document.getElementById('dice-type-selection').value;
+    let resultElement = document.getElementById('dice-results1');
+    
+    // Call the appropriate function based on the selected dice type
+    let result = methods[selectedDice]();
+    
+    resultElement.innerHTML = (`Result: ${result}`);}
 
-    const result1 = rollDie(sides1);
-    const result2 = rollDie(sides2);
-
-    const diceResultsElement1 = document.getElementById('dice-results1');
-    const diceResultsElement2 = document.getElementById('dice-results2');
-
-  
-
-    diceResultsElement1.textContent = result1;
-    diceResultsElement2.textContent = result2;
-}
-
+    module.exports = { rollDie6, rollDie10} 
